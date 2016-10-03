@@ -1,21 +1,19 @@
 package com.brioal.brioalsetting;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
-import com.brioal.settingview.adapter.SettingViewAdapter;
 import com.brioal.settingview.entity.SettingEntity;
 import com.brioal.settingview.interfaces.OnItemClickListener;
 import com.brioal.settingview.interfaces.OnSwitchChangedListener;
+import com.brioal.settingview.view.SettingView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView mRecyclerView;
+    SettingView mSettingView;
     private List<SettingEntity> mList;
     private Toast mToast;
 
@@ -77,9 +75,8 @@ public class MainActivity extends AppCompatActivity {
         }));
         mList.add(new SettingEntity("固件版本号", null, "V1.0.0.39"));
         mList.add(new SettingEntity("手环MAC地址", null, "FA:83:CB:51:16:26"));
-        mRecyclerView = (RecyclerView) findViewById(R.id.main_recyclerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setAdapter(new SettingViewAdapter(this, mList));
+        mSettingView = (SettingView) findViewById(R.id.main_setting);
+        mSettingView.setData(mList);
     }
 
     public void showToast(String tip) {

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.brioal.brioalsetting.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_recyclerView"
+    <com.brioal.settingview.view.SettingView
+        android:id="@+id/main_setting"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    </android.support.v7.widget.RecyclerView>
-</RelativeLayout>
+    </com.brioal.settingview.view.SettingView>
+</ScrollView>
